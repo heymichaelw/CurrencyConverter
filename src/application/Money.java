@@ -21,7 +21,6 @@ public class Money {
                 this.amount = amount * 0.0004;
                 break;
         }
-        this.currency = "USD";
     }
 
     public double toUSD(){

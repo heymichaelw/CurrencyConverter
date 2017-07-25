@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 public class SanityTest {
     @Test
     public void SanityTest(){
-        assertEquals(5,6);
+        assertEquals(5,5);
     }
 
     @Test
