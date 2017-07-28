@@ -1,5 +1,7 @@
 package application;
 
+import java.text.DecimalFormat;
+
 public class Money {
 
     private String currency;
@@ -12,13 +14,13 @@ public class Money {
                 this.amount = amount;
                 break;
             case "EUR":
-                this.amount = amount * 0.858;
+                this.amount = Double.parseDouble(getRoundedResult(amount * 0.858));
                 break;
             case "JPY":
-                this.amount = amount * 111.848;
+                this.amount = Double.parseDouble(getRoundedResult(amount * 111.848));
                 break;
             case "BTC":
-                this.amount = amount * 0.0004;
+                this.amount = Double.parseDouble(getRoundedResult(amount * 0.0004));
                 break;
         }
     }
@@ -28,15 +30,15 @@ public class Money {
     }
 
     public double toEUR(){
-        return (this.amount / 0.858);
+        return (Double.parseDouble(getRoundedResult(this.amount / 0.858)));
     }
 
     public double toJPY(){
-        return (this.amount / 111.848);
+        return (Double.parseDouble(getRoundedResult(this.amount / 111.848)));
     }
 
     public double toBTC(){
-        return (this.amount / 0.0004);
+        return (Double.parseDouble(getRoundedResult(this.amount / 0.0004)));
     }
 
     public String getCurrency() {
@@ -45,5 +47,10 @@ public class Money {
 
     public double getAmount() {
         return amount;
+    }
+
+    public String getRoundedResult(double value){
+        DecimalFormat df = new DecimalFormat("#.###");
+        return df.format(value);
     }
 }

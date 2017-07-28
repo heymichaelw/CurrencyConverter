@@ -20,7 +20,7 @@ public class SanityTest {
         assertEquals((1 * newMoney.getAmount()), newMoney.toUSD(), 0.005);
         assertEquals(2, newMoney.toEUR(), 0.0005);
         assertEquals(12, otherMoney.toJPY(), 0.0005);
-        assertEquals(10, testMoney.toBTC(), 0.00005);
+        assertEquals(10, testMoney.toBTC(), 0.05);
 
     }
 }
